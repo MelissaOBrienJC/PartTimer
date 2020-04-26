@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+     
+      <ion-buttons slot="end">         
+          <ion-button (click)="timerNew()"  routerLink="/timer-detail"  color="light">
+            <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+          </ion-button>          
+        </ion-buttons>
+
+
+        
+      <ion-title class="ion-text-center">
+      Timers
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-list >
+   
+      
+      <div *ngFor="let timerName of timerNameList" >
+
+        <ion-item detail  (click)="timerStart(timerName)">    
+          <ion-icon slot="start" name="timer"></ion-icon>   
+          
+          <ion-label>
+           
+            
+                <h2>{{timerName}}</h2>
+        
+
+            
+            
+          </ion-label>
+         
+          
+        
+                                    
+         
+        </ion-item>   
+       
+    </div>
+
+    </ion-list>
+</ion-content>
+ 

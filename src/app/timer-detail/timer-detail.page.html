@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      
+    <ion-title class="ion-text-center">Timer</ion-title>
+    
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+     <ion-item>
+            <ion-label position="stacked">Timer Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" [(ngModel)]="timer.Name"></ion-input>
+     </ion-item>
+     <ion-item>
+        <ion-label>multi part timer</ion-label>
+        <ion-toggle slot="start" name="MultiPart" [(ngModel)]="timer.MultiPart" ></ion-toggle>
+      </ion-item>
+
+      <div *ngIf="!timer.MultiPart">
+      <ion-item>
+        <ion-label>Time</ion-label>
+        <ion-input [(ngModel)]="timer.Time.DisplayTime"></ion-input>
+        <ion-button slot="end" fill="clear" (click)="showPicker()"  >Select</ion-button>
+      </ion-item>
+      </div>
+
+      <div *ngIf="timer.MultiPart">
+        <ion-item>
+          <ion-buttons slot="end">         
+            <ion-button (click)="timerPartNew()"  routerLink="/timer-part-detail">
+              <ion-icon slot="start" name="add-circle"></ion-icon>
+              <ion-label>Add part timer</ion-label>
+            </ion-button>          
+          </ion-buttons>
+        </ion-item>
+
+
+        <div *ngFor="let timerPart of timer.PartTimers" >
+
+          <ion-item detail routerLink="/timer-part-detail" (click)="timerPartSelected(timerPart.Name)">
+            <ion-icon slot="start" color="medium" name="timer"></ion-icon>
+            <ion-label>{{timerPart.Name}}</ion-label>
+                                      
+            <ion-label slot="end">{{timerPart.Time.DisplayTime}}</ion-label>
+          </ion-item>   
+          
+      </div>
+  
+        </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>     
+    <ion-button fill="clear" (click)="timerDelete()">
+      <ion-icon slot="icon-only" name="trash" ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,8 @@
+{
+  "name": "partTimer",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

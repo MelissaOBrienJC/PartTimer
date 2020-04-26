@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+     Settings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Alarm Sound</ion-label>
+      <ion-select [(ngModel)]="userSettings.Sound" okText="Okay" cancelText="Dismiss" (ionChange)="playSound()">
+        <ion-select-option value="classic">classic</ion-select-option>
+        <ion-select-option value="digital">digital</ion-select-option>
+        <ion-select-option value="beep">beep</ion-select-option>
+        <ion-select-option value="frogs">frogs</ion-select-option>
+        <ion-select-option value="rooster">rooster</ion-select-option>
+      </ion-select>
+    </ion-item>
+      <ion-item>
+      <ion-label >Repeat alert tones</ion-label>
+      <ion-toggle slot="end" [(ngModel)]="userSettings.Repeat" [checked]="userSettings.Repeat"></ion-toggle>
+    </ion-item>
+ 
+      <ion-item>
+        <ion-label >Prevent screen lock while running</ion-label>
+        <ion-toggle slot="end" [(ngModel)]="userSettings.PreventScreenLock" [checked]="userSettings.PreventScreenLock"></ion-toggle>
+      </ion-item>
+  </ion-list>
+</ion-content>

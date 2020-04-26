@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons (click)="backButtonPressed()"  slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{timer.Name}}</ion-title>
+    <ion-buttons slot="end">    
+      <ion-button (click)="timerSelected(timer.Name)" slot="end" color="light">
+        <ion-icon slot="icon-only" name="settings" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+ 
+ <div  *ngIf="timerInitialized" >
+  <ion-row center>  
+    <ion-col class="ion-text-center">
+     
+<circle-progress
+[percent]="percentage" 
+[radius]="125"
+[outerStrokeWidth]="10"
+[innerStrokeWidth]="10"
+[space] = "-10"
+[outerStrokeColor]="'#4882c2'"
+[innerStrokeColor]="'#e7e8ea'"
+[titleFontSize]= "58"
+[unitsFontSize]= "48"
+[startFromZero]="false"
+[animation]="false"
+[animationDuration]="300"
+[showTitle]="true"
+[showSubtitle]="showSubtitle"
+[showUnits]="false"
+[subtitleFontSize]="18"
+[subtitleFormat]="formatSubtitle"
+[titleFormat]="formatTitle"
+[responsive]="false"
+[showZeroOuterStroke]="false"
+></circle-progress>
+</ion-col>
+</ion-row> 
+<ion-row center>  
+  <ion-col class="ion-text-center">
+    <ion-button (click)="restartTimer()" color="light">
+      <ion-icon slot="icon-only" name="skip-backward" ></ion-icon>
+  </ion-button>
+        <ion-button (click)="startTimer()" color="light">
+            <ion-icon slot="icon-only" name="play" ></ion-icon>
+        </ion-button>
+        <ion-button (click)="stopTimer()"  color="light">
+            <ion-icon slot="icon-only" name="pause" ></ion-icon>
+        </ion-button>
+  </ion-col>
+</ion-row> 
+</div>
+</ion-header>
+
+<ion-content [ngClass]="timer.MultiPart ? '' : 'no-scroll'">
+  <div  *ngIf="timerInitialized">
+  <div  *ngIf="timer.MultiPart">    
+  <div  class="item-content"  *ngFor="let timerPart of timer.PartTimers;let i= index;" >             
+    <ion-item id="mp_{{i}}" [ngClass]="getRowColorClass(i)">
+      <ion-icon slot="start" color="medium" name="timer"></ion-icon>
+      <ion-label>{{timerPart.Name}}</ion-label>                                
+      <ion-label slot="end">{{timerPart.Time.DisplayTime}}</ion-label>
+    </ion-item>     
+  </div>
+  </div>
+</div>
+</ion-content>
+

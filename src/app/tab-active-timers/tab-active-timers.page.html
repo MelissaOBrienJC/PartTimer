@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title class="ion-text-center">
+       Active Timers
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content>
+    
+    <ion-list >
+   
+      
+        <div *ngFor="let activeTimer of activeTimerList" >
+              <div *ngIf="!activeTimer.MultiPart" >
+                <div *ngIf="activeTimer.State === 1 || activeTimer.State  === 0"  >
+                    <ion-item >  
+                      <ion-icon slot="start" name="timer"></ion-icon>   
+                          <ion-col>
+                          <ion-label>
+                            <div class="activeListItemTitle" >
+                                {{ activeTimer.Name}}  
+                              </div>
+                              </ion-label>
+                              </ion-col>
+                              <ion-col class = "ion-text-right">
+                                  <ion-label class="list-displaytime">
+                                 <div *ngIf="activeTimer.State === 1"  >
+                                  <h1>
+                                      {{activeTimer.Time.DisplayTime}} </h1>
+                                </div>
+                               <div *ngIf="activeTimer.State  === 0" >
+                                <h2> paused </h2>
+                               </div>
+                              </ion-label>
+                              </ion-col>
+                            
+                      </ion-item>
+                  </div>
+                  
+              </div>
+   
+    
+              <div *ngIf="activeTimer.MultiPart" >
+                <div *ngIf="activeTimer.PartTimers[activeTimer.PartTimerSeqNo]"  >
+                  <div *ngIf="activeTimer.PartTimers[activeTimer.PartTimerSeqNo].State === 1 || activeTimer.PartTimers[activeTimer.PartTimerSeqNo].State === 0"  >
+                    <ion-item >  
+                      <ion-icon slot="start" name="timer"></ion-icon>   
+                      <ion-col>
+                              <ion-label>
+                                <div class="activeListItemTitle" >
+                                  {{ activeTimer.Name}}  
+                                </div>
+                                  <div class="activeListItemSubTitle" >
+                                  <h2> {{activeTimer.PartTimers[activeTimer.PartTimerSeqNo].Name.toUpperCase()}} </h2>
+                                  </div> 
+                                </ion-label>
+                                </ion-col>
+
+                                
+                                <ion-col class="ion-text-right">
+                                    <ion-label class="list-displaytime">
+                                  <div *ngIf="activeTimer.PartTimers[activeTimer.PartTimerSeqNo].State === 1 " >
+                                      <h1>{{ activeTimer.PartTimers[activeTimer.PartTimerSeqNo].Time.DisplayTime}} </h1> 
+                                  </div>
+                                  <div *ngIf="activeTimer.PartTimers[activeTimer.PartTimerSeqNo].State === 0" >
+                                      <h2> paused </h2> 
+                                  </div>
+                                </ion-label>
+                              </ion-col>
+                            
+                             
+                      
+                    </ion-item>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+    </ion-list>
+  </ion-content>
+  
