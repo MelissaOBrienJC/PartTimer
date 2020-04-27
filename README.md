@@ -1,7 +1,15 @@
 # PartTimer
-A multi part timer app developed in ionic 4
+A multi part timer mobile app developed in ionic 4
 
+## Screen Shots
+<p align="center">
+    <img src="http://www.parttimer.mobdemo.org//images//parttimer-1-splash.jpg" height="600em"/>
+    <img src="http://www.parttimer.mobdemo.org//images//parttimer-2-list.jpg" height="600em"/>
+    <img src="http://www.parttimer.mobdemo.org//images//parttimer-3-run.jpg" height="600em"/>
+    <img src="http://www.parttimer.mobdemo.org//images//parttimer-4-active.jpg" height="600em"/>
+    <img src="http://www.parttimer.mobdemo.org//images//parttimer-5-settings.jpg" height="600em"/>
 
+</p>
  ## To run
  * Clone this repository: `https://github.com/MelissaOBrienJC/PartTimer.git`.
  * Run `npm install` from the project root.
