@@ -10,7 +10,7 @@ A multi part timer mobile app developed in ionic 4
  ## To run
  * Clone this repository: `https://github.com/MelissaOBrienJC/PartTimer.git`.
  * Run `npm install` from the project root.
- * If you do not install the ionic CLI (`npm install -g ionic`)
+ * If you do not have the ionic CLI installed run `npm install -g ionic`
  * Run `ionic serve` in a terminal from the project root.
  
   ## Environment
