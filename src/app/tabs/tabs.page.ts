@@ -17,6 +17,7 @@ export class TabsPage implements OnDestroy{
     this.storageService.getUserSettingsFromStorage();
     this.storageService.getTimerNamesFromStorage();
     this.userSettingsService.getUserSettings();
+ 
   }
 
   ngOnDestroy() {

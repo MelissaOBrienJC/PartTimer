@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserSettings } from '../models/user-settings';
 import { UserSettingsService } from '../service/user-settings.service';
 import { AppInfoService } from '../service/app-info.service';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 @Component({
   selector: 'app-tab-settings',
@@ -15,11 +15,14 @@ export class TabSettingsPage implements OnInit {
   alarmRing = new Audio();
 
   constructor( private userSettingsService: UserSettingsService,
-               public appInfoService: AppInfoService) {
+               public appInfoService: AppInfoService,
+               public storage:  IonicStorageModule) {
   }
 
   ngOnInit() {
     this.userSettings = this.userSettingsService.userSettings;
+
+   
   }
 
   ionViewWillLeave() {

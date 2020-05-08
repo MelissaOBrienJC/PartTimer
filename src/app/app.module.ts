@@ -12,13 +12,13 @@ import { Plugins} from '@capacitor/core';
 import { LocalNotifications} from '@ionic-native/local-notifications/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
 import { Insomnia } from '@ionic-native/insomnia/ngx';
-
+import { IonicStorageModule } from '@ionic/storage';
 const { Storage } = Plugins;
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,IonicStorageModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,

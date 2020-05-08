@@ -1,7 +1,8 @@
 # PartTimer
 A multi part timer mobile app developed in ionic 4
 
-## Screen Shots
+## Demo
+<a href="http://www.mobdemo.org/part-timer-demo" rel="nofollow">Try out the demo!</a>
 <p align="center">    
     <img src="http://www.parttimer.mobdemo.org//images//parttimer-list-sm.jpg" />
     <img src="http://www.parttimer.mobdemo.org//images//parttimer-run-sm.jpg"/>

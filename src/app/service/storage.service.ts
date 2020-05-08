@@ -40,6 +40,8 @@ async getUserSettingsFromStorage() {
       return uobj;
 }
 
+
+
 // ------------------------------------------------------------------
 // Get Timer From Storage
 // timerObject Subject is populated and available for subscription
@@ -47,6 +49,15 @@ async getUserSettingsFromStorage() {
 async getTimerFromStorage(name: string) {
   return await Storage.get({ key: name });
 }
+
+
+
+
+// async getSomethingFromStorage(name: string) {
+//   const val = await Storage.get({ key: name });
+//   console.log(val.value.toString());
+//   return val;
+// }
 
 
 // ------------------------------------------------------------------
